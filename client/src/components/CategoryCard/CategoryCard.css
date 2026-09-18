@@ -1,0 +1,63 @@
+.category-card {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 3 / 1;
+    text-decoration: none;
+    width: 100%;
+    border-radius: 12px;
+    background-color: #eee;
+    color: #eee;
+
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    object-position: center;
+    transition: transform 0.4s ease;
+
+}
+/* Жената – малко повече от горната част */
+.category-image.women {
+    object-position: center 35%;
+}
+
+/* Мъжът – местим изображението надолу в рамката,
+   за да влезе главата */
+.category-image.men {
+    object-position: center 30%;
+}
+
+/* Детето в момента стои добре */
+.category-image.kids {
+    object-position: center 50%;
+}
+
+.category-card:hover img {
+    transform: scale(1.03);
+}
+
+.category-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 35px 50px;
+    background: rgba(0, 0, 0, 0.15);
+    color: white;
+}
+
+.category-overlay h3 {
+    margin: 0 0 8px;
+    font-size: 28px;
+}
+
+.category-overlay span {
+    font-size: 14px;
+    text-decoration: underline;
+}

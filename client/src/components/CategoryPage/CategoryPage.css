@@ -1,0 +1,43 @@
+.category-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px 40px 80px;
+}
+
+.category-header {
+    margin-bottom: 35px;
+}
+
+.category-header h1 {
+    margin: 10px 0;
+    font-size: 36px;
+}
+
+.category-header > p:last-child {
+    color: #666;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: #888;
+}
+
+.breadcrumb a {
+    color: #888;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: #111;
+    text-decoration: underline;
+}
+
+.no-products {
+    padding: 60px 0;
+    text-align: center;
+    color: #777;
+}

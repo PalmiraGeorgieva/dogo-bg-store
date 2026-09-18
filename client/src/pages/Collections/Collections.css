@@ -1,0 +1,57 @@
+.collections-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px 40px 80px;
+}
+
+.collections-header {
+    margin-bottom: 35px;
+}
+
+.collections-header h1 {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 36px;
+}
+.collections-header p {
+    text-align: center;
+    font-weight: bold;
+}
+
+.collections-header > p:last-child {
+    color: #666;
+}
+
+.breadcrumb {
+    margin: 0;
+    color: #888;
+    font-size: 13px;
+}
+
+.category-filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+}
+
+.category-filters button {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.category-filters button:hover,
+.category-filters button.active {
+    background: #111;
+    border-color: #111;
+    color: #fff;
+}
+
+.no-collections {
+    padding: 50px 0;
+    text-align: center;
+    color: #777;
+}
