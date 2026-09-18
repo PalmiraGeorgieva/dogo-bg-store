@@ -1,10 +1,16 @@
+import { Link } from "react-router-dom";
 import "./Collections.css";
+
 
 function Collections() {
     return (
         <section className="collections-page">
             <div className="collections-header">
-                <p className="breadcrumb">Home / Collections</p>
+                <div className="bredcrumb">
+                   <Link to="/">Home</Link>
+                   <span> / </span>
+                   <span>Collections</span>
+                </div>
                 <h1>Collections</h1>
                 <p>Discover DOGO collections</p>
             </div>
