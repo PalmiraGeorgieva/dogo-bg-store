@@ -29,14 +29,42 @@
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 15px;
+    
     color: #111;
+}
+
+.action-btn {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.menu-btn {
+    font-size: 28px;
+}
+
+.header-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border: none;
+    background: none;
+
+    color: #111;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.header-icon:hover {
+    opacity: 0.6;
 }
 
 .header-actions a {
     color: #111;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .main-navigation {
@@ -51,7 +79,7 @@
     color: #111;
     text-decoration: none;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: bold;
     text-transform: uppercase;
 }
 
@@ -69,4 +97,65 @@
     display: block;
     width: 200px;
     height: auto;
+}
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 25px;
+}
+
+.language-switcher button {
+    padding: 0;
+    border: none;
+    font-size: 15px;
+    background-color: white;
+    color: #888;
+    cursor: pointer;
+}
+
+.language-switcher button.active {
+    color: #159bd7;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .header-top {
+        padding: 15px 20px;
+    }
+
+    .logo img {
+        width: 140px;
+    }
+
+    .header-actions {
+        gap: 10px;
+    }
+
+    .action-btn {
+        display: none;
+    }
+
+    .main-navigation {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+        background: #fff;
+        border-top: 1px solid #eee;
+    }
+
+    .main-navigation.open {
+        display: flex;
+    }
+
+    .main-navigation a {
+        width: 100%;
+        padding: 14px 0;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+
 }

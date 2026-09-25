@@ -10,8 +10,8 @@
     padding: 60px 40px;
 
     display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
-    gap: 60px;
+    grid-template-columns: 1.3fr 1fr 1fr 1.5fr 1fr;
+    gap: 50px;
 }
 
 .footer-section {
@@ -78,17 +78,96 @@
     margin-bottom: 8px;
 }
 
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    font-size: 22px;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+    color: #fff;
+    transform: translateY(-2);
+}
+
+.footer-contact {
+    align-items: center;
+}
+
+.footer-contact h4 {
+    width: 100%;
+    text-align: center;
+}
+
+.contact-list {
+    width: fit-content;
+    max-width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transform: translateX(70px);
+}
+
+.contact-item {
+    display: grid;
+    grid-template-columns: 20px minmax(0, 1fr);
+    align-items: start;
+    gap: 10px;
+
+    width: 100%;
+
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.contact-item svg {
+    width: 20px;
+    height: 1em;
+    margin-top: 0.2em;
+
+    justify-self: center;
+    color: #fff;
+}
+
+.contact-item a,
+.contact-item span {
+    color: #aaa;
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    color: #fff;
+}
+
 @media (max-width: 900px) {
     .footer-content {
         grid-template-columns: repeat(2, 1fr);
         gap: 40px;
+    }
+     
+    .contact-list {
+        transform: translateX(60px);
+        width: 270px;
+        max-width: 100%;
+        margin-inline: auto;
     }
 }
 
 @media (max-width: 600px) {
     .footer {
         margin-top: 50px;
-
     }
 
     .footer-content {
@@ -96,10 +175,21 @@
         padding: 40px 24px;
         gap: 35px;
     }
-   
+
+    .contact-list {
+        transform: translateX(50px);
+        width: 270px;
+        max-width: 100%;
+        margin-inline: auto;
+    }
+
+    .footer-contact {
+        width: 100%;
+        align-items: center;
+    }
+
     .footer-bottom {
         padding: 18px 24px;
     }
 
 }
-
