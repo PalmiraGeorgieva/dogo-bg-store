@@ -1,143 +1,64 @@
 # DOGO Bulgaria Store
 
-DOGO Bulgaria Store is a React-based e-commerce website created for the Bulgarian representation of DOGO.
-
-The project follows the visual identity of the official DOGO Store while providing a localized experience for customers in Bulgaria.
-
----
+Web application inspired by the official DOGO Store website.
 
 ## 🎯 Project Goal
 
-The goal of the project is to create a modern and responsive Bulgarian online store for DOGO products.
+Създаване на български сайт за продуктите на DOGO, визуално максимално
+близък до оригиналния DOGO Store.
 
-The website allows customers to:
+Сайтът ще позволява на клиентите да разглеждат продукти, да избират
+размер/вариант и да правят директна заявка/покупка.
 
-- Browse DOGO products by category
-- View detailed product information
-- Select product sizes and variants
-- Access delivery, return and size information
-- Use the website in Bulgarian or English
-- Create or access a customer account
-
-Product, cart and checkout functionality is planned to be connected with Shopify.
+Заявките ще се обработват от склада, а наличностите в сайта ще се
+актуализират според обработените поръчки.
 
 ---
 
 ## 🛠 Technologies
 
 ### Frontend
-
 - React
-- Vite
 - React Router
-- JavaScript
 - CSS
 - Context API
-- i18next
-- react-i18next
-- React Icons
 
-### E-commerce Integration
-
-- Shopify — product, cart and checkout integration
-
-### Backend / Development
-
+### Backend
 - Node.js
 - Express.js
-- PostgreSQL / Prisma — explored during the initial backend development
-
-### Version Control
-
-- Git
-- GitHub
+- Prisma ORM
+- PostgreSQL
 
 ---
 
-## 🌍 Internationalization
+## 📄 Main Pages
 
-The website supports:
-
-- 🇧🇬 Bulgarian
-- 🇬🇧 English
-
-Language switching is implemented with `i18next` and `react-i18next`.
-
-The selected language is stored locally so the user's preference is preserved.
-
----
-
-## 📄 Pages
-
-### Store
-
+### Public
 - Home
 - Women
 - Men
 - Kids
-- Deals
-- Collections
+- Product Catalog
 - Product Details
-- Order
+- Search
+- Order / Buy Now
+- Login / Register
+- 404
 
-### Customer
-
-- Login
-- Register
-
-### Information
-
-- About Us
-- Delivery
-- Returns & Exchanges
-- FAQ
-- Size & Care Guide
-
-### Other
-
-- Custom 404 / Not Found page
+### Administration / Warehouse
+- Admin Dashboard
+- Products
+- Add Product
+- Edit Product
+- Stock Management
+- Orders
+- Order Details
 
 ---
 
-## ✨ Current Features
+## 👟 Products
 
-- Responsive navigation
-- Mobile menu
-- Bulgarian / English language switcher
-- Product cards and product grids
-- Category navigation
-- Product details interface
-- Order interface
-- Login and registration interfaces
-- FAQ accordion
-- Delivery information
-- Returns and exchange information
-- Size tables
-- Product care instructions
-- Social media links
-- Responsive layout
-- Custom 404 page
-
----
-
-## 🔎 Planned / In Progress
-
-The following functionality is still being developed or depends on the Shopify integration:
-
-- Shopify product catalog
-- Dynamic product details
-- Product search
-- Shopping cart
-- Checkout
-- Customer account integration
-- Live product availability / stock
-- Final hero/banner imagery
-
----
-
-## 👟 Product Structure
-
-Products may include:
+Всеки продукт трябва да съдържа:
 
 - Name
 - Description
@@ -146,147 +67,160 @@ Products may include:
 - Images
 - Color
 - Available sizes
-- Stock / availability
+- Stock for each size
 - Product code / SKU
-
-Product information is expected to be supplied through the e-commerce integration rather than maintained as static frontend data.
 
 ---
 
-## 🛒 Shopping Flow
+## 📦 Stock System
 
-```text
+Наличността трябва да се следи по вариант.
+
+Example:
+
+DOGO Boots
+- Size 36 → 3
+- Size 37 → 5
+- Size 38 → 2
+- Size 39 → Out of stock
+
+При обработване/изпращане на поръчка наличността трябва да се
+актуализира автоматично.
+
+---
+
+## 🧾 Order Flow
+
 Customer
-   ↓
-Browse Products
-   ↓
+↓
 Select Product
-   ↓
+↓
 Select Size / Variant
-   ↓
-Add to Cart / Buy
-   ↓
-Checkout
-   ↓
-Order Processing
-```
+↓
+Buy Now / Order
+↓
+Enter Customer & Delivery Information
+↓
+Order Created
+↓
+Warehouse Receives Order
+↓
+Warehouse Confirms / Ships
+↓
+Stock Updated
 
-The final shopping and checkout flow will depend on the Shopify integration.
+### Order Statuses
+
+- Pending
+- Confirmed
+- Processing
+- Shipped
+- Completed
+- Cancelled
+
+---
+
+## 🗄 Database Models
+
+- User
+- Product
+- ProductVariant
+- Category
+- Order
+- OrderItem
 
 ---
 
 ## 🎨 Design
 
-The visual direction is based on the official DOGO Store brand identity and adapted for the Bulgarian website.
+Reference:
+Official DOGO Store
 
-Main design elements include:
+The Bulgarian version should follow the original brand identity as
+closely as possible.
 
-- Header and navigation
-- Hero sections
+Important elements:
+- Header/navigation
+- Hero banners
 - Category sections
 - Product cards
-- Product grids
-- Product details
-- Responsive typography and spacing
-- Footer
+- Product grid
+- Product details layout
+- Typography
+- Spacing
 - Mobile responsive design
+- Footer
 
 ---
 
-## 📱 Responsive Design
+## 📌 Development Plan
 
-The website is designed to work across:
+### Phase 1 — Project Setup
+- [ ] Create React project
+- [ ] Create server
+- [ ] Configure PostgreSQL
+- [ ] Configure Prisma
+- [ ] Create Git repository
+- [ ] Create basic folder structure
 
-- Desktop
-- Tablet
-- Mobile devices
+### Phase 2 — UI
+- [ ] Header
+- [ ] Footer
+- [ ] Home
+- [ ] Categories
+- [ ] Product Card
+- [ ] Product Catalog
+- [ ] Product Details
+- [ ] Responsive design
 
-Individual components and informational pages include responsive layouts and mobile-specific styling.
+### Phase 3 — Backend
+- [ ] Product API
+- [ ] Category API
+- [ ] Authentication
+- [ ] Orders API
+- [ ] Stock management
 
----
+### Phase 4 — Orders
+- [ ] Buy Now / Request form
+- [ ] Create order
+- [ ] Warehouse order view
+- [ ] Order statuses
+- [ ] Stock update
 
-## 📌 Development Status
+### Phase 5 — Admin / Warehouse
+- [ ] Dashboard
+- [ ] Add products
+- [ ] Edit products
+- [ ] Delete/archive products
+- [ ] Manage stock
+- [ ] Manage orders
 
-### Core UI
-
-- [x] Project setup
-- [x] React routing
-- [x] Header
-- [x] Footer
-- [x] Home page
-- [x] Category pages
-- [x] Product cards
-- [x] Product grid
-- [x] Product details UI
-- [x] Responsive layout
-
-### Localization
-
-- [x] Bulgarian translation
-- [x] English translation
-- [x] Language switcher
-
-### Customer UI
-
-- [x] Login interface
-- [x] Registration interface
-- [ ] Customer account integration
-
-### Information Pages
-
-- [x] About Us
-- [x] Delivery
-- [x] Returns & Exchanges
-- [x] FAQ
-- [x] Size & Care Guide
-- [x] Custom 404 page
-
-### E-commerce
-
-- [ ] Shopify product integration
-- [ ] Dynamic search
-- [ ] Cart integration
-- [ ] Checkout integration
-- [ ] Live stock / availability
-
-### Final
-
-- [ ] Final banner imagery
-- [ ] Full mobile testing
-- [ ] Final validation
-- [ ] Error handling review
+### Phase 6 — Final
+- [ ] Validation
+- [ ] Error handling
+- [ ] Mobile testing
+- [ ] Security checks
 - [ ] Deployment
 
----
-
-## 👥 Team Responsibilities
+## Team Responsibilities
 
 ### Palmira
-
 - Project structure
 - React architecture
 - Routing
 - State management
-- Internationalization
-- Application pages and functionality
-- E-commerce integration support
-- Order flow
-- Git / GitHub integration
+- Backend with Node.js / Express
+- Prisma / PostgreSQL
+- API integration
+- Order logic
+- Stock management
+- Authentication
 
 ### Rosen
-
-- Shopify integration
-- UI development
+- HTML/CSS structure
 - Responsive styling
 - Visual matching with DOGO Store
 - Static UI sections
+- Simple React components
 - Asset preparation
-- UI testing
-
----
-
-## 🚧 Project Status
-
-The main frontend structure and informational content are implemented.
-
-Current development is focused on integrating the store with Shopify and completing the remaining e-commerce functionality.
+- Testing UI on different screen sizes

@@ -1,49 +1,82 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { getProductByHandle, createCart, addToCart, getCart } from "../../services/shopify";
 import "./ProductDetails.css";
 
-const product = {
-    id: "wb026-fre006",
-    name: "Freya",
-    title: "Дамски бели маратонки на платформа от веган кожа - Warner Bros Looney Tunes Tweety & Sylvester Puddy Tat",
-    price: 84.99,
-    gender: "Дамски",
-    color: "Бял",
-    sizes: [36, 37, 38, 39, 40, 41],
-    shipping: "1-2 работни дни",
-    image: "/products/wb026-fre006/freya.jpg",
-};
-
 function ProductDetails() {
+    const { productId } = useParams();
+    const [product, setProduct] = useState(null);
     const [selectedSize, setSelectedSize] = useState(null);
-    const navigate = useNavigate();
+    const [loading, setLoading] = useState(true);
 
+    useEffect(() => {
+        async function loadProduct() {
+            try {
+                const shopifyProduct = await getProductByHandle(productId);
+                console.log("SHOPIFY PRODUCT DETAILS:", shopifyProduct);
+                setProduct(shopifyProduct);
+            } catch (error) {
+                console.error("Error loading product:", error);
+            } finally {
+                setLoading(false);
+            }
+        }
 
-    const handleOrder = () => {
+        loadProduct();
+    }, [productId]);
+
+    if (loading) {
+        return <p>Loading product...</p>;
+    }
+
+    if (!product) {
+        return <p>Product not found.</p>;
+    }
+
+    const handleOrder = async () => {
         if (!selectedSize) {
             return;
         }
 
-        navigate("/order", {
-            state: {
-                product: product,
-                selectedSize: selectedSize,
-            },
-        });
+        try {
+            const existingCartId = localStorage.getItem("shopifyCartId");
+
+            let cart;
+
+            if (existingCartId) {
+                cart = await addToCart(existingCartId, selectedSize);
+            } else {
+                cart = await createCart(selectedSize);
+                localStorage.setItem("shopifyCartId", cart.id);
+            }
+
+            console.log("SHOPIFY CART:", cart);
+            
+            const cartDetails = await getCart(cart.id);
+            console.log("CART DETAILS:", cartDetails);
+        } catch (error) {
+            console.error("Error updating cart:", error);
+        }
     };
 
     return (
         <section className="product-details">
-             <div className="breadcrumb">
-                    <Link to="/">Home</Link>
-                    <span> / </span>
-                    <Link to="/women">Women</Link>
-                    <span> / </span>
-                    <span>{product.name}</span>
-                </div>    
-            <div className="product-gallery"> 
-                <img src={product.image} alt={product.name} className="product-main-image" />
+            <div className="breadcrumb">
+                <Link to="/">Home</Link>
+                <span> / </span>
+                <Link to="/women">Women</Link>
+                <span> / </span>
+                <span>{product.name}</span>
+            </div>
+            <div className="product-gallery">
+                {product.images?.nodes?.map((image) => (
+                    <img
+                        key={image.url}
+                        src={image.url}
+                        alt={image.altText || product.title}
+                        className="product-main-image"
+                    />
+                ))}
             </div>
 
             <div className="product-details-info">
@@ -53,7 +86,8 @@ function ProductDetails() {
                 <h1>{product.name}</h1>
                 <p className="product-title">{product.title}</p>
                 <p className="product-details-price">
-                    {product.price.toFixed(2)} USD
+                    {product.variants.nodes[0].price.amount}{" "}
+                    {product.variants.nodes[0].price.currencyCode}
                 </p>
                 <div className="product-meta">
                     <p><strong>Пол:</strong> {product.gender}</p>
@@ -62,23 +96,23 @@ function ProductDetails() {
                 <div className="product-sizes">
                     <h3>Изберете размер</h3>
                     <div className="size-options">
-                        {product.sizes.map((size) => (
-                            <button 
-                              key={size}
-                              type="button"
-                              className={selectedSize === size ? "selected" : ""}
-                              onClick={() => setSelectedSize(size)}
-
+                        {product.variants.nodes.map((variant) => (
+                            <button
+                                key={variant.id}
+                                type="button"
+                                className={selectedSize === variant.id ? "selected" : ""}
+                                onClick={() => setSelectedSize(variant.id)}
+                                disabled={!variant.availableForSale}
                             >
-                                {size}
+                                {variant.title}
                             </button>
                         ))}
                     </div>
                 </div>
-                <button 
-                  className="order-btn" 
-                  disabled={!selectedSize}
-                  onClick={handleOrder}
+                <button
+                    className="order-btn"
+                    disabled={!selectedSize}
+                    onClick={handleOrder}
                 >
                     ЗАЯВИ ПРОДУКТА →
                 </button>
@@ -89,5 +123,4 @@ function ProductDetails() {
         </section>
     )
 }
-
 export default ProductDetails;

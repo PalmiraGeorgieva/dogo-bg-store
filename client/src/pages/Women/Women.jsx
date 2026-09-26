@@ -1,44 +1,8 @@
 import ProductGrid from "../../components/ProductGrid/ProductGrid";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { getCollectionByHandle } from "../../services/shopify";
 import "./Women.css";
-
-const womenProducts = [
-    {
-        id: "wb026-fre006",
-        name: "Freya",
-        category: "Sneakers",
-        price: 84.99,
-        image: "/products/wb026-fre006/freya.jpg",
-        hoverImage: "/products/wb026-fre006/freya-2.jpg",
-    },
-    {
-        id: "wb026-mono001",
-        name: "Mono",
-        category: "Bags",
-        price: 64.99,
-        image: "/products/wb026-mono001/monoBag.jpg",
-        hoverImage: "/products/wb026-mono001/mono.jpg",
-    },
-    {
-        id: "dga025-cla006",
-        name: "Clarisse",
-        category: "Wallets",
-        price: 34.99,
-        image: "/products/dga025-cla006/claWallet.jpg",
-        hoverImage: "/products/dga025-cla006/clarisse.jpg"
-
-    },
-    {
-        id: "dgs022-ftb031",
-        name: "Future Boots",
-        category: "Boots",
-        price: null,
-        image: "/products/dgs022-ftb031/womenBoots.jpg",
-        hoverImage: "/products/dgs022-ftb031/womenBoots-2.jpg",
-    },
-
-];
 
 const categories = [
     "All",
@@ -50,13 +14,42 @@ const categories = [
 
 function Women() {
     const [selectedCategory, setSelectedCategory] = useState("All");
+    const [shopifyProducts, setShopifyProducts] = useState([]);
 
-    const filteredProducts = 
-       selectedCategory === "All"
-          ? womenProducts
-          : womenProducts.filter(
-            (product) => product.category === selectedCategory
-          );
+    useEffect(() => {
+        async function loadProducts() {
+            try {
+                const collection = await getCollectionByHandle("women");
+
+                const formattedProducts = collection.products.nodes.map((product) => ({
+                    id: product.handle,
+                    shopifyId: product.id,
+                    name: product.title,
+                    category: "Sneakers",
+                    price: Number(product.priceRange.minVariantPrice.amount),
+                    currency: product.priceRange.minVariantPrice.currencyCode,
+                    image: product.images?.nodes?.[0]?.url || "",
+                    hoverImage: product.images?.nodes?.[1]?.url || "",
+                    variants: product.variants?.nodes || [],
+                }));
+
+                setShopifyProducts(formattedProducts);
+
+            } catch (error) {
+                console.error("Error loading Shopify products:", error);
+            }
+        }
+
+        loadProducts();
+    }, []);
+
+    const allProducts = shopifyProducts;
+    const filteredProducts =
+        selectedCategory === "All"
+            ? allProducts
+            : allProducts.filter(
+                (product) => product.category === selectedCategory
+            );
 
     return (
         <section className="category-page">
@@ -73,24 +66,24 @@ function Women() {
             <div className="category-filters">
                 {categories.map((category) => (
                     <button
-                       key={category}
-                       type="button"
-                       className={
-                          selectedCategory === category
-                             ? "active"
-                             : ""
-                       }
-                       onClick={() => setSelectedCategory(category)}
+                        key={category}
+                        type="button"
+                        className={
+                            selectedCategory === category
+                                ? "active"
+                                : ""
+                        }
+                        onClick={() => setSelectedCategory(category)}
                     >
-                      {category}
+                        {category}
                     </button>
                 ))}
-                
+
             </div>
             {filteredProducts.length > 0 ? (
-            <ProductGrid products={filteredProducts} />
-        ) : (
-            <p className="no-products">No products found in this category.</p>
+                <ProductGrid products={filteredProducts} />
+            ) : (
+                <p className="no-products">No products found in this category.</p>
             )}
         </section>
     );
