@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import ProductGrid from "../../components/ProductGrid/ProductGrid";
 import CategoryCard from "../../components/CategoryCard/CategoryCard";
 import { useTranslation } from "react-i18next";
+import bannerDogo from "../../assets/banerDogo.png";
 import "./Home.css";
 
 const products = [
@@ -62,6 +63,7 @@ function Home() {
     return (
         <div className="home">
            <section className="hero">
+            <div className="hero-banner"  style={{ backgroundImage: `url(${bannerDogo})`}} />
             <div className="hero-content">
                 <h1>{t("home.heroTitle")}</h1>
                 <p>{t("home.heroDescription")}</p>
