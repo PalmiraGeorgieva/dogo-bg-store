@@ -23,8 +23,8 @@ export async function shopifyFetch(query, variables = {}) {
     const result = await response.json();
 
     if (!response.ok || result.errors) {
-        console.error('Shopify API error:', result.errors || result);
-        throw new Error('Shopify API request failed');
+    console.error("Shopify API error:", result.errors || result);
+    throw new Error("Shopify API request failed");
     }
 
     return result.data;
@@ -275,4 +275,151 @@ export async function getCart(cartId) {
     });
 
     return data.cart;
+}
+
+/* Промяна на количеството в количката*/
+
+export async function updateCartLine(cartId, lineId, quantity) {
+    const query = `
+        mutation UpdateCartLines (
+            $cartId: ID!,
+            $lines: [CartLineUpdateInput!]!
+        ){
+          cartLinesUpdate(cartId: $cartId, lines: $lines) {
+                cart {
+                    id
+                    checkoutUrl
+                    totalQuantity
+                    cost {
+                        subtotalAmount {
+                            amount
+                            currencyCode
+                        }
+                        totalAmount {
+                           amount
+                           currencyCode
+                        }
+
+                    }
+                    lines(first:50){
+                       nodes {
+                          id
+                          quantity
+                          merchandise {
+                             ... on ProductVariant {
+                                id
+                                title
+                                price {
+                                   amount
+                                   currencyCode
+                                }
+                                product {
+                                   id
+                                   title
+                                   handle
+                                   featuredImage {
+                                       url
+                                       altText
+                                   }
+
+                                }   
+
+                            }
+                          }
+                       }
+                    } 
+                   
+
+                }
+                userErrors {
+                    field
+                    message
+                }          
+            }
+        }
+    `;
+
+    const data = await shopifyFetch(query, {
+        cartId,
+        lines: [
+            {
+                id: lineId,
+                quantity,
+            },
+        ],
+    });
+
+    if (data.cartLinesUpdate.userErrors.length > 0) {
+        throw new Error(data.cartLinesUpdate.userErrors[0].message);
+        
+    }
+    return data.cartLinesUpdate.cart;
+}
+
+/* Изтриване на продукт от количката*/
+
+export async function removeCartLine(cartId, lineId) {
+    const query = `
+        mutation RemoveCartLines(
+           $cartId: ID!,
+           $lineIds: [ID!]!
+        ){
+           cartLinesRemove(
+              cartId: $cartId,
+              lineIds: $lineIds
+           ){
+              cart {
+                id 
+                checkoutUrl 
+                totalQuantity
+                cost {
+                    subtotalAmount {
+                       amount
+                       currencyCode
+                    }
+                }
+                lines(first: 50) {
+                    nodes {
+                      id
+                      quantity
+                      merchandise {
+                        ... on ProductVariant {
+                            id
+                            title
+                            price {
+                               amount
+                               currencyCode
+                            }
+                            product {
+                                id
+                                title
+                                handle
+                                featuredImage {
+                                   url
+                                   altText
+                                }
+                            }   
+                        }
+                      }
+                    }
+                }    
+              }
+              userErrors {
+                field
+                message   
+               }  
+            }
+        }
+    `;
+
+    const data = await shopifyFetch(query, {
+        cartId,
+        lineIds: [lineId],
+    });
+
+    if (data.cartLinesRemove.userErrors.length > 0) {
+        throw new Error(data.cartLinesRemove.userErrors[0].message);
+        
+    }
+    return data.cartLinesRemove.cart;
 }

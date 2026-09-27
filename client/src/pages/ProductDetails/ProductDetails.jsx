@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getProductByHandle, createCart, addToCart, getCart } from "../../services/shopify";
 import "./ProductDetails.css";
+import { useCart } from "../../contexts/useCart";
 
 function ProductDetails() {
     const { productId } = useParams();
     const [product, setProduct] = useState(null);
     const [selectedSize, setSelectedSize] = useState(null);
     const [loading, setLoading] = useState(true);
+    const { setCart } = useCart();
 
     useEffect(() => {
         async function loadProduct() {
@@ -53,6 +55,7 @@ function ProductDetails() {
             console.log("SHOPIFY CART:", cart);
             
             const cartDetails = await getCart(cart.id);
+            setCart(cartDetails);
             console.log("CART DETAILS:", cartDetails);
         } catch (error) {
             console.error("Error updating cart:", error);

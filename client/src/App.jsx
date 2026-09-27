@@ -9,6 +9,7 @@ import Men from './pages/Men/Men';
 import Kids from './pages/Kids/Kids';
 import Deals from './pages/Deals/Deals';
 import Collections from './pages/Collections/Collections';
+import Cart from './pages/Cart/Cart';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/collections' element={<Collections />} /> 
         <Route path='/products/:productId'element={<ProductDetails />} />
         <Route path='/order' element={<Order />} />
+        <Route path='/cart' element={<Cart />} />
         
       </Route>
     </Routes>
