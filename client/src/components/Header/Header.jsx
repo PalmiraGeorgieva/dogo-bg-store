@@ -1,14 +1,34 @@
 import { NavLink } from "react-router-dom";
 import LogoImage from "../../assets/Dogo.png";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { FiShoppingBag } from "react-icons/fi";
 import "./Header.css";
 import { useTranslation } from "react-i18next";
 import { FiSearch, FiUser } from "react-icons/fi";
 import { useCart } from "../../contexts/useCart";
+import Search from "../Search/Search";
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+    const searchRef = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if(
+                searchRef.current &&
+                !searchRef.current.contains(event.target)
+            ) {
+                setIsSearchOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
 
     const closeMenu = () => {
         setMenuOpen(false)
@@ -46,11 +66,16 @@ function Header() {
                           <span className="cart-count">{cartCount}</span>
                        )}
                     </NavLink>
+                    <div className="search-wrapper" ref={searchRef}>
                   <button type="button" className="header-icon" 
                           aria-label={t("navigation.search")} 
-                          title={t("navigation.search")}>
+                          title={t("navigation.search")}
+                          onClick={() => setIsSearchOpen(!isSearchOpen)}
+                          >
                             <FiSearch />
                   </button>
+                  {isSearchOpen && <Search />}
+                  </div>
                   <NavLink to="/login"
                         className="header-icon"
                         aria-label={t("navigation.account")}

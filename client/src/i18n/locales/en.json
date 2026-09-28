@@ -134,5 +134,10 @@
     "refundTitle": "Refund",
     "refundText": "Once we receive the product and confirm that it is in perfect condition, we will refund the amount paid by bank transfer within 14 business days.",
     "closing": "If you have any additional questions or need help choosing the right size, our team is available for a personal consultation!"
+  },
+  "search": {
+    "placeholder": "Search products...",
+    "button": "Search",
+    "noResults": "No products found."
   }
 }

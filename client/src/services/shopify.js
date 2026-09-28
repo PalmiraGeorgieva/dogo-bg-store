@@ -423,3 +423,38 @@ export async function removeCartLine(cartId, lineId) {
     }
     return data.cartLinesRemove.cart;
 }
+
+/* Search of product */
+
+export async function searchProducts(searchTerm) {
+    const query = `
+        query SearchProducts($query: String!) {
+            products(first: 20, query: $query) {
+                nodes {
+                    id
+                    title
+                    handle
+                    availableForSale
+                    images(first: 1) {
+                        nodes {
+                            url 
+                            altText
+                        }
+                    }
+                    priceRange {
+                        minVariantPrice {
+                            amount
+                            currencyCode
+                        }
+                    }    
+                }
+            }
+        }
+    `;
+
+    const data = await shopifyFetch(query, {
+         query: searchTerm,
+    });
+
+    return data.products.nodes;
+}

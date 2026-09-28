@@ -19,6 +19,7 @@ import Return from "./pages/Return/Return";
 import SizeGuide from "./pages/SizeGuide/SizeGuide";
 import Cart from './pages/Cart/Cart';
 
+
 function App() {
   return (
     <Routes>
@@ -39,6 +40,7 @@ function App() {
         <Route path="/return" element={<Return />} />
         <Route path="/size-guide" element={<SizeGuide />} />
         <Route path='/cart' element={<Cart />} />
+
         
       </Route>
       <Route path='*' element={<NotFound />} />
