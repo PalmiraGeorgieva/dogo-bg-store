@@ -1,0 +1,139 @@
+.return-page {
+    width: 100%;
+    padding: 70px 24px 100px;
+    background-color: #fff;
+    color: #111;
+}
+
+.return-hero {
+    max-width: 850px;
+    margin: 0 auto 70px;
+    text-align: center;
+}
+
+.return-label {
+    margin: 0 0 12px;
+    color: #159bd7;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.return-hero h1 {
+    margin: 0 0 20px;
+    font-size: 42px;
+    line-height: 1.2;
+}
+
+.return-intro {
+    max-width: 720px;
+    margin: 0 auto;
+    color: #666;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.return-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.return-section {
+    padding: 45px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.return-section:first-child {
+    padding-top: 0;
+}
+
+.return-section h2 {
+    margin: 0 0 24px;
+    font-size: 28px;
+    line-height: 1.3;
+}
+
+.return-section h3 {
+    margin: 28px 0 16px;
+    font-size: 18px;
+}
+
+.return-section p,
+.return-section li {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.return-section p {
+    margin: 0 0 16px;
+}
+
+.return-section ul,
+.return-section ol {
+    padding-left: 24px;
+}
+
+.return-section li {
+    margin-bottom: 12px;
+}
+
+.return-closing {
+    max-width: 700px;
+    margin: 55px auto 0;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.7;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .return-page {
+        padding: 50px 20px 80px;
+    }
+
+    .return-hero {
+        margin-bottom: 50px;
+    }
+
+    .return-hero h1 {
+        font-size: 34px;
+    }
+
+    .return-section {
+        padding: 35px 0;
+    }
+
+    .return-section h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .return-page {
+        padding: 40px 18px 60px;
+    }
+
+    .return-hero h1 {
+        font-size: 29px;
+    }
+
+    .return-section {
+        padding: 30px 0;
+    }
+
+    .return-section h2 {
+        font-size: 21px;
+    }
+
+    .return-section p,
+    .return-section li {
+        font-size: 15px;
+    }
+
+    .return-closing {
+        margin-top: 40px;
+        font-size: 16px;
+    }
+}

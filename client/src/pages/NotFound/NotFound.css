@@ -1,0 +1,43 @@
+.not-found {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    overflow: hidden;
+
+    background: #fff;
+}
+
+.not-found-image {
+   height: auto;
+    width: auto;
+    max-height: calc(100vh - 100px);
+    max-width: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+.home-button {
+    padding: 14px 28px;
+    flex-shrink: 0;
+   
+    background: #111;
+    color: #fff;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+
+    border-radius: 10px;
+    transition: 0.2s ease;
+}
+
+.home-button:hover {
+    background: #159bd7;
+}
