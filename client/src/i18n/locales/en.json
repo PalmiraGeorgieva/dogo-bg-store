@@ -23,7 +23,11 @@
     "returns": "Returns",
     "sizeGuide": "Size & Care Guide",
     "address": "DOGO Burgas, 20 Aleko Bogoridi Blvd.",
-    "copyright": "All rights reserved."
+    "copyright": "All rights reserved.",
+    "consumerProtection": "Consumer Protection Commission",
+    "consumerDisputes": "European Consumer Dispute Resolution",
+    "privacy": "Privacy Policy",
+    "terms": "Terms and Conditions"
   },
   "faq": {
     "back": "Back",
@@ -102,42 +106,138 @@
     "customerService": "Professional customer service in Bulgarian, ready to assist you with any questions or size exchanges.",
     "closing": "Thank you for being part of our colorful family and choosing to step forward with kindness and style!"
   },
-  "delivery": {
+ "delivery": {
     "label": "DOGO BULGARIA",
-    "title": "Delivery",
-    "intro": "As the official representative of DOGO in Bulgaria, our main goal is to provide you with a pleasant, secure and hassle-free shopping experience.",
+    "title": "Order and Delivery",
+    "intro": "At DOGO Bulgaria, we aim to provide you with a fast, convenient and secure shopping experience. All DOGO shoes and bags are delivered with care throughout Bulgaria.",
+
     "conditionsTitle": "Delivery Conditions",
+
     "courierTitle": "Courier Service",
-    "courierText": "All shipments within Bulgaria are delivered by Econt / Speedy – to your address or to a convenient courier office.",
+    "courierText": "All orders within Bulgaria are delivered by Speedy – either to a selected Speedy office or directly to your address.",
+
     "timeTitle": "Delivery Time",
-    "timeText": "Orders are processed quickly, with a standard delivery time of 1 to 3 business days after confirmation.",
-    "testTitle": "Inspection and Try-On",
-    "testText": "Every shipment is sent with an inspection and try-on before payment option. Please use this option and try on the shoes in a clean area in front of the courier to make sure the size is right for you."
+    "timeText": "All orders are processed and dispatched within 2 to 4 business days, provided that the items are available in stock.",
+
+    "freeDeliveryTitle": "Delivery Cost",
+    "freeDeliveryText": "Delivery is free for all orders over EUR 100. For orders under EUR 100, delivery costs are paid by the customer according to Speedy's standard rates.",
+
+    "confirmationTitle": "Order Confirmation",
+    "confirmationText": "After placing an order, a member of our team will contact you by phone to confirm product availability and delivery details. Orders are not dispatched without telephone confirmation.",
+
+    "availabilityTitle": "Temporarily Out of Stock",
+    "availabilityText": "If a product is temporarily out of stock but a new delivery from the DOGO factory is expected, our team will contact you by phone and inform you when the order can be fulfilled.",
+
+    "testTitle": "Open and Try",
+    "testText": "All shipments include a free Open and Try option, allowing you to inspect and try the product in the presence of the courier before payment."
   },
   "return": {
     "label": "DOGO BULGARIA",
-    "title": "Exchanges & Returns",
-    "intro": "We know that choosing shoes online can sometimes be difficult, so we offer flexible and convenient exchange and return conditions.",
+    "title": "Exchange and Returns",
+    "intro": "We understand that choosing shoes and bags online requires flexibility, so we offer a simple and convenient exchange and return process.",
+
     "exchangeTitle": "Easy Size or Model Exchange",
-    "exchangeText": "If, after trying the shoes at home, you find that you need a different size or would like to exchange them for another model, you can do so within 14 days of receiving your order.",
+    "exchangeText": "If, after trying the shoes at home, you find that you need a different size or would like to exchange them for another model, you may do so within 14 calendar days from the date of receipt.",
+
     "exchangeConditions": "Exchange Conditions",
-    "conditionProduct": "The product must be in its original condition – it must not have been worn outdoors, washed, ironed or cleaned.",
-    "conditionBox": "The shoes must be returned in their original undamaged DOGO box. Please protect the box with additional packaging or a bag when sending it by courier.",
-    "conditionLabels": "All accompanying labels and accessories must remain attached to the product.",
-    "exchangeShipping": "Courier costs for transporting the new size or model are covered by the customer.",
-    "returnTitle": "Right of Return and Refund",
-    "returnText": "Under Bulgarian law, you have the right to withdraw from your purchase and return the product within 14 calendar days from the date of delivery without providing a reason.",
-    "howToReturn": "How to Return a Product",
-    "returnCondition": "Make sure the shoes meet the conditions for being returned in their original condition – there must be no signs of wear on the soles or upper material, and they must be returned in their original box.",
-    "contactUs": "Contact us by email or phone to request a return.",
-    "sendBack": "Send the parcel back to us without cash on delivery. Return shipping costs are covered by the customer.",
+    "conditionProduct": "The product must be in its original saleable condition – it must not have been worn outdoors, damaged, washed or cleaned.",
+    "conditionBox": "It is recommended that shoes are returned in their original box, placed inside additional protective packaging or a bag to prevent damage during transport.",
+    "conditionLabels": "Please do not remove any labels until you are sure that the product and size are suitable for you.",
+    "exchangeShipping": "The cost of returning the product and delivering the new size or model is paid by the customer according to the courier's standard rates.",
+
+    "exchangeProcessTitle": "How does the exchange work?",
+    "exchangeRequest": "Request an exchange and specify the new size or model you would like to receive.",
+    "exchangeSend": "After submitting your request, send the product back to us via Speedy courier.",
+    "exchangeConfirmation": "Once we receive the product and confirm that it is in its original saleable condition, we will send you the selected new size or model.",
+
+    "returnTitle": "Product Returns and Refunds",
+    "returnText": "Under Bulgarian consumer legislation, you have the right to withdraw from your purchase and return the product within 14 calendar days from the date of receipt without providing a reason.",
+
+    "howToReturn": "How to return a product?",
+    "returnCondition": "Make sure the product is in its original saleable condition and shows no signs of outdoor use or improper treatment.",
+    "contactUs": "Submit your return request according to the specified return procedure.",
+    "sendBack": "Send the product back via Speedy courier without cash on delivery. Return shipping costs are paid by the customer.",
+
+    "requiredDocumentsTitle": "Required Documents",
+    "requiredDocumentsText": "The product must be accompanied by proof of purchase. For cash-on-delivery payments made through Speedy, please include the original Postal Money Transfer receipt or a clear copy with the returned product.",
+
     "refundTitle": "Refund",
-    "refundText": "Once we receive the product and confirm that it is in perfect condition, we will refund the amount paid by bank transfer within 14 business days.",
-    "closing": "If you have any additional questions or need help choosing the right size, our team is available for a personal consultation!"
+    "refundText": "After we receive and inspect the returned product, the amount paid will be refunded by bank transfer to the IBAN provided by you. The standard processing time is 7–8 business days, with the stated maximum period being up to 14 calendar days.",
+
+    "closing": "If you experience any difficulties or have questions about an exchange or return, our team is available to assist you."
   },
   "search": {
     "placeholder": "Search products...",
     "button": "Search",
     "noResults": "No products found."
+  },
+  "privacy": {
+    "label": "DOGO BULGARIA",
+    "title": "Privacy and Confidentiality Policy",
+    "intro": "Protecting your personal data is important to us. This policy provides information about the collection, use, storage and protection of personal data when using our online store.",
+
+    "administratorTitle": "Personal Data Controller",
+    "administratorText": "The personal data controller is Victris Ltd., UIC 201571356, VAT No. BG201571356, with registered office and management address at 8 Perushtitsa Street, Burgas, Bulgaria.",
+
+    "dataTitle": "What personal data do we collect?",
+    "dataIntro": "Depending on how you use the online store, the following categories of personal data may be processed:",
+    "dataIdentity": "Identification data – first and last name.",
+    "dataContact": "Contact details – telephone number, email address and delivery address.",
+    "dataOrder": "Information related to your orders, selected products, delivery and payment method.",
+    "dataTechnical": "Technical data related to the use of the website, where such data is collected through the technologies and services used.",
+
+    "purposeTitle": "Why do we use your personal data?",
+    "purposeOrders": "To receive, process and fulfil your orders.",
+    "purposeDelivery": "To arrange and complete the delivery of purchased products.",
+    "purposeCommunication": "To communicate with you regarding orders, enquiries and customer service.",
+    "purposeLegal": "To comply with legal and accounting obligations.",
+    "purposeMarketing": "To send marketing communications where you have provided the required consent.",
+
+    "paymentTitle": "Bank Card Payments",
+    "paymentText": "When paying by bank card, your card details are entered only on the secure payment page of the relevant bank or card operator. The online store and Victris Ltd. do not collect, store or process your bank card details.",
+
+    "recipientsTitle": "Who may receive your personal data?",
+    "recipientsIntro": "Where necessary to fulfil an order or comply with legal obligations, personal data may be provided to:",
+    "recipientCourier": "Courier companies required to deliver your order.",
+    "recipientPayment": "Banks and payment service providers in connection with payment processing.",
+    "recipientIT": "IT, hosting and other technical service providers required for the operation of the online store.",
+    "recipientAuthorities": "Competent public authorities where disclosure of information is required by law.",
+
+    "rightsTitle": "Your Rights",
+    "rightAccess": "The right to access your personal data.",
+    "rightCorrection": "The right to request correction of inaccurate or incomplete personal data.",
+    "rightDeletion": "The right to request deletion of your personal data where the legal requirements are met.",
+    "rightRestriction": "The right to request restriction of processing in cases provided by law.",
+    "rightObjection": "The right to object to the processing of your personal data where applicable.",
+    "rightPortability": "The right to data portability in cases provided by law.",
+
+    "complaintTitle": "Right to Lodge a Complaint",
+    "complaintText": "If you believe that your rights regarding the protection of personal data have been violated, you have the right to lodge a complaint with the Bulgarian Commission for Personal Data Protection (CPDP)."
+  },
+  "terms": {
+    "label": "DOGO BULGARIA",
+    "title": "Terms and Conditions",
+    "intro": "These Terms and Conditions govern the relationship between the merchant and consumers when using the online store and purchasing the products offered.",
+
+    "merchantTitle": "1. Merchant Information",
+    "merchantText": "The merchant and operator of the online store is Victris Ltd., UIC 201571356, VAT No. BG201571356, with registered office and management address at 8 Perushtitsa Street, Burgas, Bulgaria.",
+
+    "productsTitle": "2. Products and Prices",
+    "productsText": "The online store offers products under the DOGO brand. Product prices are displayed in euros (EUR) and represent the final retail prices of the goods.",
+
+    "paymentTitle": "3. Payment Methods",
+    "paymentText": "Payment may be made by cash on delivery through a Postal Money Transfer (PMT) upon delivery or by bank card through the provided secure payment service.",
+
+    "deliveryTitle": "4. Delivery",
+    "deliveryText": "Orders are delivered by Speedy courier to a selected Speedy office or to an address provided by the customer. When the products are in stock, orders are processed and dispatched within 2 to 4 business days. Delivery is free for orders over EUR 100. For orders below this amount, delivery costs are paid by the customer.",
+
+    "withdrawalTitle": "5. Right of Withdrawal and Returns",
+    "withdrawalText": "The consumer has the right to withdraw from the purchase and return the purchased product within 14 calendar days from the date of receipt without providing a reason. The returned product must be in its original saleable condition and comply with the applicable return conditions.",
+
+    "guaranteeTitle": "6. Legal Guarantee",
+    "guaranteeText": "Purchased products are covered by a two-year legal guarantee of conformity. The guarantee does not cover damage caused by improper use, improper care, mechanical damage or normal wear and tear.",
+
+    "disputesTitle": "7. Dispute Resolution",
+    "disputesText": "In the event of a dispute, the parties should make reasonable efforts to resolve it amicably. Consumers may contact the competent authorities and consumer alternative dispute resolution bodies."
   }
 }

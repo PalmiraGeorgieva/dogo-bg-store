@@ -18,6 +18,8 @@ import Delivery from "./pages/Delivery/Delivery";
 import Return from "./pages/Return/Return";
 import SizeGuide from "./pages/SizeGuide/SizeGuide";
 import Cart from './pages/Cart/Cart';
+import Privacy from './pages/Privacy/Privacy';
+import Terms from "./pages/Terms/Terms";
 
 
 function App() {
@@ -40,6 +42,8 @@ function App() {
         <Route path="/return" element={<Return />} />
         <Route path="/size-guide" element={<SizeGuide />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
 
         
       </Route>

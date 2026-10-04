@@ -10,8 +10,8 @@
     padding: 60px 40px;
 
     display: grid;
-    grid-template-columns: 1.3fr 1fr 1fr 1.5fr 1fr;
-    gap: 50px;
+    grid-template-columns: 1.2fr 0.9fr 1.5fr 1.4fr 1fr;
+    gap: 40px; 
 }
 
 .footer-section {
@@ -151,6 +151,16 @@
     color: #fff;
 }
 
+.footer-legal-link {
+    display: block;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.footer-legal-link-first {
+    margin-top: 12px;
+}
+
 @media (max-width: 900px) {
     .footer-content {
         grid-template-columns: repeat(2, 1fr);
@@ -162,6 +172,23 @@
         width: 270px;
         max-width: 100%;
         margin-inline: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        padding-bottom: 80px;
+    }
+    
+    .footer-legal-link {
+        width: auto;
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .footer-legal-link-first {
+        margin-top: 10px;
     }
 }
 

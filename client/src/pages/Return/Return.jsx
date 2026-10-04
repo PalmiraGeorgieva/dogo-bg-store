@@ -32,6 +32,14 @@ function Return() {
                         <li>{t("return.conditionLabels")}</li>
                         <li>{t("return.exchangeShipping")}</li>
                     </ul>
+                    <h3>{t("return.exchangeProcessTitle")}</h3>
+
+                    <ol>
+                        <li>{t("return.exchangeRequest")}</li>
+                        <li>{t("return.exchangeSend")}</li>
+                        <li>{t("return.exchangeConfirmation")}</li>
+                    </ol>
+                   
                 </article>
 
                 <article className="return-section">
@@ -46,6 +54,9 @@ function Return() {
                         <li>{t("return.contactUs")}</li>
                         <li>{t("return.sendBack")}</li>
                     </ol>
+                     <h3>{t("return.requiredDocumentsTitle")}</h3>
+
+                     <p>{t("return.requiredDocumentsText")}</p>
                 </article>
 
                 <article className="return-section">

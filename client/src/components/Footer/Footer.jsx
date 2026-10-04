@@ -29,10 +29,36 @@ function Footer() {
                 <div className="footer-section">
                     <h4>{t("footer.information")}</h4>
                      <Link to="/about">{t("footer.aboutUs")}</Link>
+                      <Link to="/terms">
+                        {t("footer.terms")}
+                    </Link>
                      <Link to="/delivery">{t("footer.delivery")}</Link>
                      <Link to="/return">{t("footer.returns")}</Link>
                      <Link to="/size-guide">{t("footer.sizeGuide")}</Link>
-                     <Link to="/faq">{t("footer.faq")}</Link>
+                    <Link to="/faq">{t("footer.faq")}</Link>
+                    <Link to="/privacy">
+                        {t("footer.privacy")}
+                    </Link>
+                   
+
+                    <a
+                        lassName="footer-legal-link footer-legal-link-first"
+                        href="https://kzp.bg/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {t("footer.consumerProtection")}
+                    </a>
+
+                    <a
+                        className="footer-legal-link"
+                        href="https://consumer-redress.ec.europa.eu/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {t("footer.consumerDisputes")}
+                    </a>
+
                 </div>
                 <div className="footer-section footer-contact">
                     <h4>{t("footer.contact")}</h4>

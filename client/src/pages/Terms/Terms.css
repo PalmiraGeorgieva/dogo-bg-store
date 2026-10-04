@@ -1,0 +1,126 @@
+.terms-page {
+    width: 100%;
+    min-height: 100vh;
+    background: #fff;
+}
+
+.terms-hero {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 70px 20px 50px;
+    text-align: center;
+}
+
+.terms-label {
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #777;
+}
+
+.terms-hero h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111;
+}
+
+.terms-intro {
+    max-width: 760px;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+.terms-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 30px 80px;
+}
+
+.terms-section {
+    padding: 30px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.terms-section:last-child {
+    border-bottom: none;
+}
+
+.terms-section h2 {
+    margin-bottom: 16px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #111;
+}
+
+.terms-section p {
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+    .terms-hero {
+        padding: 50px 20px 35px;
+    }
+
+    .terms-hero h1 {
+        font-size: 2rem;
+    }
+
+    .terms-content {
+        padding: 0 20px 60px;
+    }
+
+    .terms-section {
+        padding: 24px 0;
+    }
+
+    .terms-section h2 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+    .terms-hero {
+        padding: 40px 16px 30px;
+    }
+
+    .terms-label {
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+    }
+
+    .terms-hero h1 {
+        font-size: 1.7rem;
+    }
+
+    .terms-intro {
+        font-size: 0.95rem;
+    }
+
+    .terms-content {
+        padding: 0 16px 50px;
+    }
+
+    .terms-section {
+        padding: 20px 0;
+    }
+
+    .terms-section h2 {
+        font-size: 1.15rem;
+    }
+
+    .terms-section p {
+        font-size: 0.92rem;
+    }
+}

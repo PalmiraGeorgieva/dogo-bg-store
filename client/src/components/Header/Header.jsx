@@ -66,7 +66,7 @@ function Header() {
                           <span className="cart-count">{cartCount}</span>
                        )}
                     </NavLink>
-                    <div className="search-wrapper" ref={searchRef}>
+                  <div className="search-wrapper" ref={searchRef}>
                   <button type="button" className="header-icon" 
                           aria-label={t("navigation.search")} 
                           title={t("navigation.search")}

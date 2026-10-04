@@ -23,6 +23,20 @@ function Delivery(){
                         <p>{t("delivery.timeText")}</p>
                     </div>
                     <div className="delivery-item">
+                        <h3>{t("delivery.freeDeliveryTitle")}</h3>
+                        <p>{t("delivery.freeDeliveryText")}</p>
+                    </div>
+
+                    <div className="delivery-item">
+                        <h3>{t("delivery.confirmationTitle")}</h3>
+                        <p>{t("delivery.confirmationText")}</p>
+                    </div>
+
+                    <div className="delivery-item">
+                        <h3>{t("delivery.availabilityTitle")}</h3>
+                        <p>{t("delivery.availabilityText")}</p>
+                    </div>
+                    <div className="delivery-item">
                         <h3>
                            {t("delivery.testTitle")}
                         </h3>
