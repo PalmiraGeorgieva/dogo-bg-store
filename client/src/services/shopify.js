@@ -23,8 +23,8 @@ export async function shopifyFetch(query, variables = {}) {
     const result = await response.json();
 
     if (!response.ok || result.errors) {
-    console.error("Shopify API error:", result.errors || result);
-    throw new Error("Shopify API request failed");
+        console.error("Shopify API error:", result.errors || result);
+        throw new Error("Shopify API request failed");
     }
 
     return result.data;
@@ -103,7 +103,7 @@ export async function getProductByHandle(handle) {
         handle,
     });
 
-    return data.productByHandle;   
+    return data.productByHandle;
 
 }
 
@@ -351,7 +351,7 @@ export async function updateCartLine(cartId, lineId, quantity) {
 
     if (data.cartLinesUpdate.userErrors.length > 0) {
         throw new Error(data.cartLinesUpdate.userErrors[0].message);
-        
+
     }
     return data.cartLinesUpdate.cart;
 }
@@ -372,10 +372,14 @@ export async function removeCartLine(cartId, lineId) {
                 id 
                 checkoutUrl 
                 totalQuantity
-                cost {
+               cost {
                     subtotalAmount {
-                       amount
-                       currencyCode
+                    amount
+                    currencyCode
+                    }
+                totalAmount {
+                    amount
+                    currencyCode
                     }
                 }
                 lines(first: 50) {
@@ -419,7 +423,7 @@ export async function removeCartLine(cartId, lineId) {
 
     if (data.cartLinesRemove.userErrors.length > 0) {
         throw new Error(data.cartLinesRemove.userErrors[0].message);
-        
+
     }
     return data.cartLinesRemove.cart;
 }
@@ -453,7 +457,7 @@ export async function searchProducts(searchTerm) {
     `;
 
     const data = await shopifyFetch(query, {
-         query: searchTerm,
+        query: searchTerm,
     });
 
     return data.products.nodes;
