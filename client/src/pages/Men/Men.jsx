@@ -2,9 +2,10 @@ import CategoryPage from "../../components/CategoryPage/CategoryPage";
 import { useEffect, useState } from "react";
 import { getCollectionByHandle } from "../../services/shopify";
 import "./Men.css";
+import { useTranslation } from "react-i18next";
 
 function Men() {
-
+    const { t } = useTranslation();
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -35,8 +36,8 @@ function Men() {
 
     return (
         <CategoryPage
-            title="Men"
-            description="Discover DOGO men's collection"
+            title={t("categories.men")}
+            description={t("categories.menDescription")}
             products={products}
         />
     );

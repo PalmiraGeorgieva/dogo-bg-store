@@ -322,19 +322,19 @@ export async function updateCartLine(cartId, lineId, quantity) {
                                        altText
                                    }
 
-                                }   
+                                }
 
                             }
                           }
                        }
-                    } 
-                   
+                    }
+
 
                 }
                 userErrors {
                     field
                     message
-                }          
+                }
             }
         }
     `;
@@ -369,8 +369,8 @@ export async function removeCartLine(cartId, lineId) {
               lineIds: $lineIds
            ){
               cart {
-                id 
-                checkoutUrl 
+                id
+                checkoutUrl
                 totalQuantity
                cost {
                     subtotalAmount {
@@ -402,16 +402,16 @@ export async function removeCartLine(cartId, lineId) {
                                    url
                                    altText
                                 }
-                            }   
+                            }
                         }
                       }
                     }
-                }    
+                }
               }
               userErrors {
                 field
-                message   
-               }  
+                message
+               }
             }
         }
     `;
@@ -441,7 +441,7 @@ export async function searchProducts(searchTerm) {
                     availableForSale
                     images(first: 1) {
                         nodes {
-                            url 
+                            url
                             altText
                         }
                     }
@@ -450,7 +450,7 @@ export async function searchProducts(searchTerm) {
                             amount
                             currencyCode
                         }
-                    }    
+                    }
                 }
             }
         }

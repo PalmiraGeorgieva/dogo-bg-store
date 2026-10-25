@@ -17,6 +17,7 @@
     "men": "Men",
     "kids": "Kids",
     "deals": "Deals",
+    "collections":"Collections",
     "aboutUs": "About Us",
     "faq": "F.A.Q.",
     "delivery": "Delivery",
@@ -239,5 +240,29 @@
 
     "disputesTitle": "7. Dispute Resolution",
     "disputesText": "In the event of a dispute, the parties should make reasonable efforts to resolve it amicably. Consumers may contact the competent authorities and consumer alternative dispute resolution bodies."
+  },
+  "categories": {
+    "all": "All",
+    "shoes": "Shoes",
+    "bags": "Bags",
+    "accessories": "Accessories",
+    "women": "Women",
+    "men": "Men",
+    "kids": "Kids",
+    "womenDescription": "Discover DOGO women's collection",
+    "menDescription": "Discover DOGO men's collection",
+    "kidsDescription": "Discover DOGO kids' collection",
+    "home": "Home",
+    "noProducts": "No products available yet."
+  },
+  "deals": {
+    "title": "Deals",
+    "description": "Discover DOGO special offers and discounts"
+  },
+  "collections": {
+    "title": "Collections",
+    "description": "Explore DOGO's unique collections",
+    "comingSoon": "Collections coming soon."
+
   }
 }

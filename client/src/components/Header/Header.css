@@ -40,6 +40,7 @@
 
 .menu-btn {
     font-size: 28px;
+    display: none;
 }
 
 .header-icon {
@@ -156,6 +157,12 @@
         padding: 14px 0;
         text-align: center;
         border-bottom: 1px solid #eee;
+    }
+
+    .menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
 }

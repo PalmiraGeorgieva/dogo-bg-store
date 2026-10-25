@@ -24,6 +24,7 @@ function Footer() {
                    <Link to="/men">{t("footer.men")}</Link>
                    <Link to="/kids">{t("footer.kids")}</Link>
                    <Link to="/deals">{t("footer.deals")}</Link>
+                   <Link to="/collections">{t("footer.collections")}</Link>
                 </div>
 
                 <div className="footer-section">

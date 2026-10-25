@@ -1,11 +1,14 @@
 import CategoryPage from "../../components/CategoryPage/CategoryPage";
 import "./Deals.css";
+import { useTranslation } from "react-i18next";
 
 function Deals() {
+    const { t } = useTranslation();
+
     return (
        <CategoryPage
-           title="Deals"
-           description="Discover special DOGO offers"
+           title={t("deals.title")}
+           description={t("deals.description")}
         />
     );
 }
