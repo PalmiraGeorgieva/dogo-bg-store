@@ -53,7 +53,7 @@ function ProductDetails() {
             }
 
             console.log("SHOPIFY CART:", cart);
-            
+
             const cartDetails = await getCart(cart.id);
             setCart(cartDetails);
             console.log("CART DETAILS:", cartDetails);
@@ -82,20 +82,18 @@ function ProductDetails() {
                 ))}
             </div>
 
-            <div className="product-details-info">
-                <p className="product-code">
-                    Product code: {product.id}
-                </p>
-                <h1>{product.name}</h1>
-                <p className="product-title">{product.title}</p>
+            <div className="product-details-info">              
+                <div
+                    className="product-description"
+                    dangerouslySetInnerHTML={{
+                        __html: product.descriptionHtml || "",
+                    }}
+                />
+                <h1>{product.name}</h1>                
                 <p className="product-details-price">
                     {product.variants.nodes[0].price.amount}{" "}
                     {product.variants.nodes[0].price.currencyCode}
-                </p>
-                <div className="product-meta">
-                    <p><strong>Пол:</strong> {product.gender}</p>
-                    <p><strong>Цвят:</strong> {product.color}</p>
-                </div>
+                </p>               
                 <div className="product-sizes">
                     <h3>Изберете размер</h3>
                     <div className="size-options">

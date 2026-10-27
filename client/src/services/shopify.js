@@ -72,9 +72,10 @@ export async function getProductByHandle(handle) {
     query GetProductByHandle($handle: String!) {
       productByHandle(handle: $handle) {
         id
-        title
+        title        
         handle
         description
+        descriptionHtml
         availableForSale
 
         images(first: 10) {
@@ -88,6 +89,7 @@ export async function getProductByHandle(handle) {
           nodes {
             id
             title
+            sku
             availableForSale
             price {
               amount
@@ -109,17 +111,26 @@ export async function getProductByHandle(handle) {
 
 export async function getCollectionByHandle(handle) {
     const query = `
-        query GetCollection($handle: String!) {
+        query GetCollection($handle: String!, $cursor: String) {
             collection(handle: $handle) {
                 id
                 title
                 handle
-                products(first: 20) {
-                    nodes {
+                products(first: 100, after: $cursor) {
+                    pageInfo {
+                    hasNextPage
+                    endCursor
+                    }
+               nodes {
+                    id
+                    title
+                    handle
+                    productType
+                    category {
                         id
-                        title
-                        handle
-                        description
+                        name
+                    }
+                    description
                         availableForSale
                         images(first: 2) {
                             nodes {
@@ -146,11 +157,48 @@ export async function getCollectionByHandle(handle) {
         }
     `;
 
+   const allProducts = [];
+let cursor = null;
+let collectionInfo = null;
+
+do {
     const data = await shopifyFetch(query, {
         handle,
+        cursor,
     });
 
-    return data.collection;
+    const collection = data.collection;
+
+    if (!collection) {
+        return null;
+    }
+
+    if (!collectionInfo) {
+        collectionInfo = collection;
+    }
+
+    allProducts.push(...collection.products.nodes);
+    console.log(
+    "Shopify Categories:",
+    collection.products.nodes.map(product => ({
+        title: product.title,
+        category: product.category?.name,
+        productType: product.productType
+    }))
+);
+
+    cursor = collection.products.pageInfo.hasNextPage
+        ? collection.products.pageInfo.endCursor
+        : null;
+
+} while (cursor);
+
+return {
+    ...collectionInfo,
+    products: {
+        nodes: allProducts,
+    },
+};
 }
 
 export async function createCart(variantId) {
@@ -461,4 +509,39 @@ export async function searchProducts(searchTerm) {
     });
 
     return data.products.nodes;
+}
+
+export async function getCollections() {
+    const query = `
+        query GetCollections {
+            collections(first: 100) {
+                nodes {
+                    id
+                    title
+                    handle
+                    description
+                    image {
+                        url
+                        altText
+                    }
+                    products(first: 100) {
+                        nodes {
+                            id
+                            title
+                            handle
+                            images(first: 1) {
+                                nodes {
+                                    url
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `;
+
+    const data = await shopifyFetch(query);
+
+    return data.collections.nodes;
 }

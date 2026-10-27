@@ -18,7 +18,7 @@ function Kids() {
                     id: product.handle,
                     shopifyId: product.id,
                     name: product.title,
-                    category: "Kids",
+                    category: product.productType,
                     price: Number(product.priceRange.minVariantPrice.amount),
                     currency: product.priceRange.minVariantPrice.currencyCode,
                     image: product.images?.nodes?.[0]?.url || "",
@@ -35,13 +35,14 @@ function Kids() {
         loadProducts();
     }, []);
 
-    return (
-        <CategoryPage
-            title={t("categories.kids")}
-            description={t("categories.kidsDescription")}
-            products={products}
-        />
-    );
+  return (
+    <CategoryPage
+        title={t("categories.kids")}
+        description={t("categories.kidsDescription")}
+        products={products}
+        categories={["All", "Shoes"]}
+    />
+);
 }
 
 export default Kids;

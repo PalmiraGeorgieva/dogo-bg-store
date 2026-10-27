@@ -55,3 +55,41 @@
     text-align: center;
     color: #777;
 }
+
+.collections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.collection-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+}
+
+.collection-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.collection-card:hover img {
+    transform: scale(1.05);
+}
+
+.collection-card h2 {
+    font-size: 20px;
+    margin: 15px 0 5px;
+}
+
+.collection-card p {
+    font-size: 14px;
+    color: #777;
+}

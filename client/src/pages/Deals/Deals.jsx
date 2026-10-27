@@ -7,9 +7,10 @@ function Deals() {
 
     return (
        <CategoryPage
-           title={t("deals.title")}
-           description={t("deals.description")}
-        />
+    title={t("deals.title")}
+    description={t("deals.description")}
+    categories={[]}
+/>
     );
 }
 

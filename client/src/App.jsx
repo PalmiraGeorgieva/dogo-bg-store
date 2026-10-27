@@ -9,6 +9,7 @@ import Men from './pages/Men/Men';
 import Kids from './pages/Kids/Kids';
 import Deals from './pages/Deals/Deals';
 import Collections from './pages/Collections/Collections';
+import CollectionDetails from './pages/Collections/CollectionDetails';
 import NotFound from './pages/NotFound/NotFound';
 import FAQ from './pages/FAQ/FAQ';
 import Login from './pages/Login/Login';
@@ -32,6 +33,7 @@ function App() {
         <Route path='/kids' element={<Kids />} /> 
         <Route path='/deals' element={<Deals />} /> 
         <Route path='/collections' element={<Collections />} /> 
+        <Route path='/collections/:handle' element={<CollectionDetails />} />
         <Route path='/products/:productId'element={<ProductDetails />} />
         <Route path='/order' element={<Order />} />
         <Route path='/faq'  element={<FAQ />} />

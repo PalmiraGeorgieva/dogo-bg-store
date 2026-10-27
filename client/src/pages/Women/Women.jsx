@@ -28,7 +28,8 @@ function Women() {
                     id: product.handle,
                     shopifyId: product.id,
                     name: product.title,
-                    category: "Sneakers",
+                    category: product.productType,
+                    subcategory: product.category?.name || "Uncategorized",
                     price: Number(product.priceRange.minVariantPrice.amount),
                     currency: product.priceRange.minVariantPrice.currencyCode,
                     image: product.images?.nodes?.[0]?.url || "",
@@ -36,7 +37,52 @@ function Women() {
                     variants: product.variants?.nodes || [],
                 }));
 
-                setShopifyProducts(formattedProducts);
+                const categoryOrder = {
+                    Shoes: 1,
+                    Bags: 2,
+                    Accessories: 3,
+                };
+
+                const subcategoryOrder = {
+                    Sneakers: 1,
+                    Sandals: 2,
+                    Boots: 3,
+
+                    Handbags: 4,
+                    "Tote bags": 5,
+                    "Shopper bags": 6,
+                    Backpacks: 7,
+                    "Duffel bags": 8,
+
+                    Wallets: 9,
+                    "Passport holders": 10,
+                };
+
+                const sortedProducts = [...formattedProducts].sort((a, b) => {
+                    const orderA = categoryOrder[a.category] ?? 99;
+                    const orderB = categoryOrder[b.category] ?? 99;
+
+                    // Първо сортираме по основна категория
+                    if (orderA !== orderB) {
+                        return orderA - orderB;
+                    }
+
+                    // След това сортираме по подкатегория
+                    const subA = a.subcategory?.trim().toLowerCase();
+                    const subB = b.subcategory?.trim().toLowerCase();
+
+                    const subOrderA = Object.entries(subcategoryOrder).find(
+                        ([name]) => name.toLowerCase() === subA
+                    )?.[1] ?? 99;
+
+                    const subOrderB = Object.entries(subcategoryOrder).find(
+                        ([name]) => name.toLowerCase() === subB
+                    )?.[1] ?? 99;
+
+                    return subOrderA - subOrderB || a.name.localeCompare(b.name);
+                });
+
+                setShopifyProducts(sortedProducts);
 
             } catch (error) {
                 console.error("Error loading Shopify products:", error);
