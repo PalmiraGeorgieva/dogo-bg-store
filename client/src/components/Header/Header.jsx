@@ -67,8 +67,8 @@ function Header() {
                        )}
                     </NavLink>
                   <div className="search-wrapper" ref={searchRef}>
-                  <button type="button" className="header-icon" 
-                          aria-label={t("navigation.search")} 
+                  <button type="button" className="header-icon"
+                          aria-label={t("navigation.search")}
                           title={t("navigation.search")}
                           onClick={() => setIsSearchOpen(!isSearchOpen)}
                           >
@@ -103,7 +103,7 @@ function Header() {
                 <NavLink to="/women" onClick={closeMenu}>{t("navigation.women")}</NavLink>
                 <NavLink to="/men" onClick={closeMenu}>{t("navigation.men")}</NavLink>
                 <NavLink to="/kids" onClick={closeMenu}>{t("navigation.kids")}</NavLink>
-                <NavLink to="/deals" onClick={closeMenu}>{t("navigation.deals")}</NavLink>
+               {/* <NavLink to="/deals" onClick={closeMenu}>{t("navigation.deals")}</NavLink> */}
                 <NavLink to="/collections" onClick={closeMenu}>{t("navigation.collections")}</NavLink>
             </nav>
         </header>

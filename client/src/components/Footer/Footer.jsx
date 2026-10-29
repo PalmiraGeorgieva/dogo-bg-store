@@ -23,7 +23,7 @@ function Footer() {
                    <Link to="/women">{t("footer.women")}</Link>
                    <Link to="/men">{t("footer.men")}</Link>
                    <Link to="/kids">{t("footer.kids")}</Link>
-                   <Link to="/deals">{t("footer.deals")}</Link>
+                  {/* <Link to="/deals">{t("footer.deals")}</Link> */}
                    <Link to="/collections">{t("footer.collections")}</Link>
                 </div>
 
@@ -40,7 +40,7 @@ function Footer() {
                     <Link to="/privacy">
                         {t("footer.privacy")}
                     </Link>
-                   
+
 
                     <a
                         lassName="footer-legal-link footer-legal-link-first"
@@ -63,7 +63,7 @@ function Footer() {
                 </div>
                 <div className="footer-section footer-contact">
                     <h4>{t("footer.contact")}</h4>
-                    <div className="contact-list"> 
+                    <div className="contact-list">
                     <div className="contact-item">
                      <FaPhone />
                     <a href="tel:+359878 281 672">0878 281 672</a>
@@ -81,8 +81,8 @@ function Footer() {
                 <div className="footer-section">
                     <h4>{t("footer.followUs")}</h4>
                     <div className="social-links">
-                        <a href="https://www.facebook.com/dogo.burgas" 
-                           target="_blank" 
+                        <a href="https://www.facebook.com/dogo.burgas"
+                           target="_blank"
                            rel="noopener noreferrer"
                            aria-label="Facebook">
                             <FaFacebookF />
@@ -93,7 +93,7 @@ function Footer() {
                            aria-label="Instagram">
                             <FaInstagram />
                         </a>
-                        <a href="https://www.tiktok.com/@dogo.burgas" target="_blank" 
+                        <a href="https://www.tiktok.com/@dogo.burgas" target="_blank"
                            rel="noopener"
                            aria-label="TikTok"
                         >

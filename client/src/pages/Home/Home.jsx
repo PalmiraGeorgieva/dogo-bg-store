@@ -83,6 +83,7 @@ useEffect(() => {
                 <div className="hero-actions">
                     <Link to="/women">{t("home.shopWomen")}</Link>
                     <Link to="/men">{t("home.shopMen")}</Link>
+                    <Link to="/kids">{t("home.shopKids")}</Link>
                 </div>
             </div>
            </section>

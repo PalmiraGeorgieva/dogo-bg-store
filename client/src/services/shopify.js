@@ -72,11 +72,18 @@ export async function getProductByHandle(handle) {
     query GetProductByHandle($handle: String!) {
       productByHandle(handle: $handle) {
         id
-        title        
+        title
         handle
         description
         descriptionHtml
         availableForSale
+
+        collections(first: 20) {
+            nodes {
+                title
+                handle
+            }
+        }
 
         images(first: 10) {
           nodes {

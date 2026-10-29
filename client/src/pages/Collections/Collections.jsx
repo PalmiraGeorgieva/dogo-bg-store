@@ -39,7 +39,7 @@ function Collections() {
     return (
         <section className="collections-page">
             <div className="collections-header">
-                <div className="bredcrumb">
+                <div className="breadcrumb">
                     <Link to="/">{t("categories.home")}</Link>
                     <span> / </span>
                     <span>{t("collections.title")}</span>
